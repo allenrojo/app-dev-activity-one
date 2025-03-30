@@ -1,0 +1,423 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:fitsSystemWindows="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity">
+
+        <TextView
+            android:id="@+id/label_personal_background"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="20dp"
+            android:fontFamily="sans-serif-medium"
+            android:text="Personal Background"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/label_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="20dp"
+            android:fontFamily="sans-serif-light"
+            android:text="Name"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/label_personal_background" />
+
+        <EditText
+            android:id="@+id/input_first_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/edittext_border"
+            android:ems="10"
+            android:fontFamily="sans-serif-light"
+            android:inputType="text"
+            android:hint="First Name"
+            android:textColor="#A6A6A6"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toStartOf="@+id/input_middle_name"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/label_name" />
+
+        <EditText
+            android:id="@+id/input_middle_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/edittext_border"
+            android:ems="10"
+            android:fontFamily="sans-serif-light"
+            android:inputType="text"
+            android:hint="Middle Name"
+            android:textColor="#A6A6A6"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/label_name" />
+
+        <EditText
+            android:id="@+id/input_last_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/edittext_border"
+            android:ems="10"
+            android:fontFamily="sans-serif-light"
+            android:inputType="text"
+            android:hint="Last Name"
+            android:textColor="#A6A6A6"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/input_first_name" />
+
+        <TextView
+            android:id="@+id/label_email"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:fontFamily="sans-serif-light"
+            android:text="Email "
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/input_last_name" />
+
+        <EditText
+            android:id="@+id/input_email"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/edittext_border"
+            android:ems="10"
+            android:fontFamily="sans-serif-light"
+            android:inputType="textEmailAddress"
+            android:hint="your@email.com"
+            android:textColor="#A6A6A6"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/label_email" />
+
+        <TextView
+            android:id="@+id/label_phone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:fontFamily="sans-serif-light"
+            android:text="Phone "
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/input_email" />
+
+        <EditText
+            android:id="@+id/input_phone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/edittext_border"
+            android:ems="10"
+            android:fontFamily="sans-serif-light"
+            android:inputType="phone"
+            android:hint="+63 9XX XXX XXXX"
+            android:textColor="#A6A6A6"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/label_phone" />
+
+        <TextView
+            android:id="@+id/label_height"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:fontFamily="sans-serif-light"
+            android:text="Height "
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/input_phone" />
+
+        <EditText
+            android:id="@+id/input_height"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/edittext_border"
+            android:ems="10"
+            android:fontFamily="sans-serif-light"
+            android:inputType="numberDecimal"
+            android:hint="(m)"
+            android:textColor="#A6A6A6"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/label_height" />
+
+        <TextView
+            android:id="@+id/label_weight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="153dp"
+            android:layout_marginTop="16dp"
+            android:fontFamily="sans-serif-light"
+            android:text="Weight "
+            app:layout_constraintStart_toEndOf="@+id/label_height"
+            app:layout_constraintTop_toBottomOf="@+id/input_phone" />
+
+        <EditText
+            android:id="@+id/input_weight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/edittext_border"
+            android:ems="10"
+            android:fontFamily="sans-serif-light"
+            android:inputType="numberDecimal"
+            android:hint="(kg)"
+            android:textColor="#A6A6A6"
+            android:textSize="14sp"
+            app:layout_constraintStart_toEndOf="@+id/input_height"
+            app:layout_constraintTop_toBottomOf="@+id/label_weight" />
+
+        <TextView
+            android:id="@+id/label_pagibig"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:fontFamily="sans-serif-light"
+            android:text="PAG-IBIG No. "
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/input_height" />
+
+        <EditText
+            android:id="@+id/input_pagibig"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/edittext_border"
+            android:ems="10"
+            android:fontFamily="sans-serif-light"
+            android:inputType="number"
+            android:hint="XXXX-XXXX-XXXX"
+            android:textColor="#A6A6A6"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/label_pagibig" />
+
+        <TextView
+            android:id="@+id/label_tin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="113dp"
+            android:layout_marginTop="16dp"
+            android:fontFamily="sans-serif-light"
+            android:text="TIN No. "
+            app:layout_constraintStart_toEndOf="@+id/label_pagibig"
+            app:layout_constraintTop_toBottomOf="@+id/input_weight" />
+
+        <EditText
+            android:id="@+id/input_tin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/edittext_border"
+            android:ems="10"
+            android:fontFamily="sans-serif-light"
+            android:inputType="number"
+            android:hint="XXX-XXX-XXX-XXX"
+            android:textColor="#A6A6A6"
+            android:textSize="14sp"
+            app:layout_constraintStart_toEndOf="@+id/input_pagibig"
+            app:layout_constraintTop_toBottomOf="@+id/label_tin" />
+
+        <TextView
+            android:id="@+id/label_philhealth"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:fontFamily="sans-serif-light"
+            android:text="PhilHealth No. "
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/input_pagibig" />
+
+        <EditText
+            android:id="@+id/input_philhealth"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/edittext_border"
+            android:ems="10"
+            android:fontFamily="sans-serif-light"
+            android:inputType="number"
+            android:hint="XX-XXXXXXXXX-X"
+            android:textColor="#A6A6A6"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/label_philhealth" />
+
+        <TextView
+            android:id="@+id/label_gsis"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="103dp"
+            android:layout_marginTop="16dp"
+            android:fontFamily="sans-serif-light"
+            android:text="GSIS No. "
+            app:layout_constraintStart_toEndOf="@+id/label_philhealth"
+            app:layout_constraintTop_toBottomOf="@+id/input_tin" />
+
+        <EditText
+            android:id="@+id/input_gsis"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/edittext_border"
+            android:ems="10"
+            android:fontFamily="sans-serif-light"
+            android:inputType="number"
+            android:hint="XXXX-XXXXXX-X"
+            android:textColor="#A6A6A6"
+            android:textSize="14sp"
+            app:layout_constraintStart_toEndOf="@+id/input_philhealth"
+            app:layout_constraintTop_toBottomOf="@+id/label_gsis" />
+
+        <TextView
+            android:id="@+id/label_emergency_contact"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="20dp"
+            android:fontFamily="sans-serif-medium"
+            android:text="Emergency Contact"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/input_philhealth" />
+
+        <TextView
+            android:id="@+id/label_emergency_contact_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="20dp"
+            android:fontFamily="sans-serif-light"
+            android:text="Name "
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/label_emergency_contact" />
+
+        <EditText
+            android:id="@+id/input_full_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/edittext_border"
+            android:ems="10"
+            android:fontFamily="sans-serif-light"
+            android:inputType="text"
+            android:hint="Full Name"
+            android:textColor="#A6A6A6"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/label_emergency_contact_name" />
+
+        <TextView
+            android:id="@+id/label_emergency_contact_number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:fontFamily="sans-serif-light"
+            android:text="Contact "
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/input_full_name" />
+
+        <EditText
+            android:id="@+id/input_emergency_contact_number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="248dp"
+            android:background="@drawable/edittext_border"
+            android:ems="10"
+            android:fontFamily="sans-serif-light"
+            android:inputType="phone"
+            android:hint="+63-9XX-XXX-XXXX"
+            android:textColor="#A6A6A6"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/label_emergency_contact_number" />
+
+        <TextView
+            android:id="@+id/label_relationship"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="143dp"
+            android:layout_marginTop="16dp"
+            android:fontFamily="sans-serif-light"
+            android:text="Relationship "
+            app:layout_constraintStart_toEndOf="@+id/label_emergency_contact_number"
+            app:layout_constraintTop_toBottomOf="@+id/input_full_name" />
+
+        <EditText
+            android:id="@+id/input_relationship"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/edittext_border"
+            android:ems="10"
+            android:fontFamily="sans-serif-light"
+            android:inputType="text"
+            android:hint=""
+            android:textColor="#A6A6A6"
+            android:textSize="14sp"
+            app:layout_constraintStart_toEndOf="@+id/input_emergency_contact_number"
+            app:layout_constraintTop_toBottomOf="@+id/label_relationship" />
+
+        <Button
+            android:id="@+id/button_submit"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="150dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="150dp"
+            android:layout_marginBottom="50dp"
+            android:text="Next"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/input_emergency_contact_number" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
