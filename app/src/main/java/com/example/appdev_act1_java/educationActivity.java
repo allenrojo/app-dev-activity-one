@@ -97,6 +97,7 @@ public class educationActivity extends AppCompatActivity {
         String graduateStudiesCourse = input_graduate_studies_course.getText().toString().trim();
 
         boolean hasError = false;
+
         if (!elementary.matches("^[a-zA-Z /-]+$")) {
             input_elementary.setError("Must contain only letters, spaces, and valid characters");
             hasError = true;

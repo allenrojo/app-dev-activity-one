@@ -7,6 +7,7 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -121,6 +122,46 @@ public class criminalActivity extends AppCompatActivity {
         });
     }
     private void validateFields() {
+        boolean hasError = false;
+
+        String answerOne = details.getText().toString().trim();
+        String answerTwo = details_two.getText().toString().trim();
+        String answerThree = details_three.getText().toString().trim();
+        String answerFourA = details_four_a.getText().toString().trim();
+        String answerFourB = details_four_b.getText().toString().trim();
+        String answerFourC = details_four_c.getText().toString().trim();
+
+        boolean questionOneNo = admin_offense_no.isChecked();
+        boolean questionTwoNo = criminal_offense_no.isChecked();
+        boolean questionThreeNo = convicted_no.isChecked();
+        boolean questionFourANo = four_a_no.isChecked();
+        boolean questionFourBNo = four_b_no.isChecked();
+        boolean questionFourCNo = four_c_no.isChecked();
+
+        if (answerOne.isEmpty() && !questionOneNo){
+            hasError = true;
+        }
+        if (answerTwo.isEmpty() && !questionTwoNo){
+            hasError = true;
+        }
+        if (answerThree.isEmpty() && !questionThreeNo){
+            hasError = true;
+        }
+        if (answerFourA.isEmpty() && !questionFourANo){
+            hasError = true;
+        }
+        if (answerFourB.isEmpty() && !questionFourBNo){
+            hasError = true;
+        }
+        if (answerFourC.isEmpty() && !questionFourCNo){
+            hasError = true;
+        }
+
+
+        if (hasError) {
+            Toast.makeText(this, "Please fill in all required fields.", Toast.LENGTH_SHORT).show();
+            return;
+        }
 
         Intent intent = new Intent(this, displayActivity.class);
 
