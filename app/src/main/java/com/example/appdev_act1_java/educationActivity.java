@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -13,33 +14,62 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-public class MainActivity2 extends AppCompatActivity {
+public class educationActivity extends AppCompatActivity {
 
-    private EditText input_elementary,
-            input_secondary,
-            input_vocational,
-            input_vocational_course,
-            input_college,
-            input_college_course,
-            input_graduate_studies,
-            input_graduate_studies_course;
+    private EditText input_elementary,input_elementary_course, input_secondary, input_secondary_course, input_vocational, input_vocational_course, input_college, input_college_course, input_graduate_studies, input_graduate_studies_course;
     private Button button_submit;
+    private CheckBox checkBox, checkBox1, checkBox2, checkBox3;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_main2);
+        setContentView(R.layout.education_activity);
 
         input_elementary = findViewById(R.id.input_elementary);
+        input_elementary_course = findViewById(R.id.input_elementary_course);
         input_secondary = findViewById(R.id.input_secondary);
+        input_secondary_course = findViewById(R.id.input_secondary_course);
         input_vocational = findViewById(R.id.input_vocational);
         input_vocational_course = findViewById(R.id.input_vocational_course);
         input_college = findViewById(R.id.input_college);
         input_college_course = findViewById(R.id.input_college_course);
         input_graduate_studies = findViewById(R.id.input_graduate_studies);
         input_graduate_studies_course = findViewById(R.id.input_graduate_studies_course);
+
+
+        checkBox = findViewById(R.id.checkBox);
+        checkBox.setOnCheckedChangeListener((buttonView, isChecked) -> {
+            // Disable EditText if CheckBox is checked, enable otherwise
+            input_elementary.setEnabled(isChecked);
+            input_elementary_course.setEnabled(isChecked);
+        });
+        checkBox1 = findViewById(R.id.checkBox2);
+        checkBox1.setOnCheckedChangeListener((buttonView, isChecked) -> {
+            // Disable EditText if CheckBox is checked, enable otherwise
+            input_secondary.setEnabled(isChecked);
+            input_secondary_course.setEnabled(isChecked);
+            checkBox.setChecked(true);
+        });
+        checkBox2 = findViewById(R.id.checkBox3);
+        checkBox2.setOnCheckedChangeListener((buttonView, isChecked) -> {
+            // Disable EditText if CheckBox is checked, enable otherwise
+            input_college.setEnabled(isChecked);
+            input_college_course.setEnabled(isChecked);
+            checkBox.setChecked(true);
+            checkBox1.setChecked(true);
+        });
+        checkBox3 = findViewById(R.id.checkBox4);
+        checkBox3.setOnCheckedChangeListener((buttonView, isChecked) -> {
+            // Disable EditText if CheckBox is checked, enable otherwise
+            input_graduate_studies.setEnabled(isChecked);
+            input_graduate_studies_course.setEnabled(isChecked);
+            checkBox.setChecked(true);
+            checkBox1.setChecked(true);
+            checkBox2.setChecked(true);
+
+        });
 
         button_submit = findViewById(R.id.button_submit);
         button_submit.setOnClickListener(new View.OnClickListener() {
@@ -106,14 +136,14 @@ public class MainActivity2 extends AppCompatActivity {
 
             // If any field is empty, show a Toast message
             Toast.makeText(this, "Please fill in all required fields.", Toast.LENGTH_SHORT).show();
-            hasError = true; // make this true after testing
+            hasError = false; // make this true after testing
         }
 
         if (hasError) {
             return;
         }
 
-        Intent intent = new Intent(MainActivity2.this, MainActivity3.class);
+        Intent intent = new Intent(educationActivity.this, criminalActivity.class);
 
         intent.putExtra("key_elementary", elementary);
         intent.putExtra("key_secondary", secondary);
@@ -140,7 +170,8 @@ public class MainActivity2 extends AppCompatActivity {
         intent.putExtra("key_full_name", previousIntent.getStringExtra("key_full_name"));
         intent.putExtra("key_emergency_contact_number", previousIntent.getStringExtra("key_emergency_contact_number"));
         intent.putExtra("key_relationship", previousIntent.getStringExtra("key_relationship"));
-
+        intent.putExtra("key_gender", previousIntent.getStringExtra("key_gender"));
+        intent.putExtra("key_status", previousIntent.getStringExtra("key_status"));
         startActivity(intent);
     }
 

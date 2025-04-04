@@ -12,7 +12,7 @@
         android:id="@+id/main"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".MainActivity3">
+        tools:context=".displayActivity">
 
         <TextView
             android:id="@+id/label_personal_background"
@@ -80,6 +80,33 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/label_email" />
+
+        <TextView
+            android:id="@+id/label_gender"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="12dp"
+            android:fontFamily="sans-serif-light"
+            android:text="Gender"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/field_email" />
+        <TextView
+            android:id="@+id/field_gender"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/edittext_border"
+            android:backgroundTint="?attr/colorPrimaryContainer"
+            android:fontFamily="sans-serif-light"
+            android:text="your@email.com"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/label_gender" />
         <TextView
             android:id="@+id/label_phone"
             android:layout_width="wrap_content"
@@ -90,7 +117,7 @@
             android:text="Phone"
             android:textColor="@color/black"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/field_email" />
+            app:layout_constraintTop_toBottomOf="@+id/field_gender" />
         <TextView
             android:id="@+id/field_phone"
             android:layout_width="0dp"
@@ -160,6 +187,33 @@
             app:layout_constraintTop_toBottomOf="@+id/label_weight" />
 
         <TextView
+            android:id="@+id/label_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="12dp"
+            android:fontFamily="sans-serif-light"
+            android:text="Status"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/field_weight" />
+        <TextView
+            android:id="@+id/field_status"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/edittext_border"
+            android:backgroundTint="?attr/colorPrimaryContainer"
+            android:fontFamily="sans-serif-light"
+            android:text="420 kg"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/label_status" />
+
+        <TextView
             android:id="@+id/label_pagibig"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -169,7 +223,7 @@
             android:text="PAG-IBIG No."
             android:textColor="@color/black"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/field_weight" />
+            app:layout_constraintTop_toBottomOf="@+id/field_status" />
         <TextView
             android:id="@+id/field_pagibig"
             android:layout_width="0dp"

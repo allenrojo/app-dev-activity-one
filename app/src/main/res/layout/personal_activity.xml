@@ -12,7 +12,7 @@
         android:id="@+id/main"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".MainActivity">
+        tools:context=".personalActivity">
 
         <TextView
             android:id="@+id/label_personal_background"
@@ -100,6 +100,8 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/input_last_name" />
 
+
+
         <EditText
             android:id="@+id/input_email"
             android:layout_width="0dp"
@@ -119,6 +121,52 @@
             app:layout_constraintTop_toBottomOf="@+id/label_email" />
 
         <TextView
+            android:id="@+id/label_gender"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:fontFamily="sans-serif-light"
+            android:text="Gender "
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/input_email" />
+
+        <RadioGroup
+            android:id="@+id/radio_group_gender"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="12dp"
+            android:orientation="horizontal"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/label_gender">
+
+            <RadioButton
+                android:id="@+id/radio_male"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Male"
+                android:textSize="12sp" />
+
+            <RadioButton
+                android:id="@+id/radio_female"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Female"
+                android:textSize="12sp" />
+
+            <RadioButton
+                android:id="@+id/radio_lgbtq"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="LGBTQ"
+                android:textSize="12sp" />
+        </RadioGroup>
+
+        <TextView
             android:id="@+id/label_phone"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -127,7 +175,7 @@
             android:fontFamily="sans-serif-light"
             android:text="Phone "
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/input_email" />
+            app:layout_constraintTop_toBottomOf="@+id/radio_group_gender" />
 
         <EditText
             android:id="@+id/input_phone"
@@ -200,6 +248,71 @@
             app:layout_constraintTop_toBottomOf="@+id/label_weight" />
 
         <TextView
+            android:id="@+id/label_civil_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:fontFamily="sans-serif-light"
+            android:text="Civil Status"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/input_weight" />
+
+        <RadioGroup
+            android:id="@+id/radio_group_civil_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:orientation="horizontal"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/label_civil_status">
+
+
+            <RadioButton
+                android:id="@+id/radio_single"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Single"
+                android:textSize="12sp" />
+
+            <RadioButton
+                android:id="@+id/radio_married"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Married"
+                android:textSize="12sp" />
+
+            <RadioButton
+                android:id="@+id/radio_separated"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Separated"
+                android:textSize="12sp" />
+
+            <RadioButton
+                android:id="@+id/radio_widowed"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Widowed"
+                android:textSize="12sp" />
+
+            <RadioButton
+                android:id="@+id/radio_others"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Others"
+                android:textSize="12sp" />
+        </RadioGroup>
+
+
+
+        <TextView
             android:id="@+id/label_pagibig"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -208,7 +321,7 @@
             android:fontFamily="sans-serif-light"
             android:text="PAG-IBIG No. "
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/input_height" />
+            app:layout_constraintTop_toBottomOf="@+id/radio_group_civil_status" />
 
         <EditText
             android:id="@+id/input_pagibig"
@@ -235,7 +348,7 @@
             android:fontFamily="sans-serif-light"
             android:text="TIN No. "
             app:layout_constraintStart_toEndOf="@+id/label_pagibig"
-            app:layout_constraintTop_toBottomOf="@+id/input_weight" />
+            app:layout_constraintTop_toBottomOf="@+id/radio_group_civil_status" />
 
         <EditText
             android:id="@+id/input_tin"
@@ -417,6 +530,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/input_emergency_contact_number" />
+
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
