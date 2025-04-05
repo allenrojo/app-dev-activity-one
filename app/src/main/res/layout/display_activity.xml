@@ -447,6 +447,21 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/label_elementary" />
         <TextView
+            android:id="@+id/field_elementary_course"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/edittext_border"
+            android:backgroundTint="?attr/colorPrimaryContainer"
+            android:fontFamily="sans-serif-light"
+            android:text="420 kg"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/field_elementary" />
+        <TextView
             android:id="@+id/label_secondary"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -456,7 +471,7 @@
             android:text="Secondary"
             android:textColor="@color/black"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/field_elementary" />
+            app:layout_constraintTop_toBottomOf="@+id/field_elementary_course" />
         <TextView
             android:id="@+id/field_secondary"
             android:layout_width="0dp"
@@ -473,6 +488,21 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/label_secondary" />
         <TextView
+            android:id="@+id/field_secondary_course"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/edittext_border"
+            android:backgroundTint="?attr/colorPrimaryContainer"
+            android:fontFamily="sans-serif-light"
+            android:text="420 kg"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/field_secondary" />
+        <TextView
             android:id="@+id/label_vocational"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -482,7 +512,7 @@
             android:text="Vocational"
             android:textColor="@color/black"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/field_secondary" />
+            app:layout_constraintTop_toBottomOf="@+id/field_secondary_course" />
         <TextView
             android:id="@+id/field_vocational"
             android:layout_width="0dp"
@@ -595,7 +625,175 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/field_graduate_studies" />
+        <TextView
+            android:id="@+id/label_criminal_background"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="20dp"
+            android:fontFamily="sans-serif-medium"
+            android:text="Criminal Background"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/field_graduate_studies_course" />
+        <TextView
+            android:id="@+id/label_admin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="12dp"
+            android:fontFamily="sans-serif-light"
+            android:text="Administrative Offense:"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/label_criminal_background" />
+        <TextView
+            android:id="@+id/field_admin"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/edittext_border"
+            android:backgroundTint="?attr/colorPrimaryContainer"
+            android:fontFamily="sans-serif-light"
+            android:text="course/degree"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/label_admin" />
+        <TextView
+            android:id="@+id/label_criminal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="12dp"
+            android:fontFamily="sans-serif-light"
+            android:text="Criminal Offense:"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/field_admin" />
+        <TextView
+            android:id="@+id/field_criminal"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/edittext_border"
+            android:backgroundTint="?attr/colorPrimaryContainer"
+            android:fontFamily="sans-serif-light"
+            android:text="course/degree"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/label_criminal" />
+        <TextView
+            android:id="@+id/label_convicted"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="12dp"
+            android:fontFamily="sans-serif-light"
+            android:text="Convictions:"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/field_criminal" />
+        <TextView
+            android:id="@+id/field_convicted"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/edittext_border"
+            android:backgroundTint="?attr/colorPrimaryContainer"
+            android:fontFamily="sans-serif-light"
+            android:text="course/degree"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/label_convicted" />
+        <TextView
+            android:id="@+id/label_indigenous"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="12dp"
+            android:fontFamily="sans-serif-light"
+            android:text="Member of Indigenous Group:"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/field_convicted" />
+        <TextView
+            android:id="@+id/field_indigenous"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/edittext_border"
+            android:backgroundTint="?attr/colorPrimaryContainer"
+            android:fontFamily="sans-serif-light"
+            android:text="course/degree"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/label_indigenous" />
+        <TextView
+            android:id="@+id/label_pwd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="12dp"
+            android:fontFamily="sans-serif-light"
+            android:text="Person with Disability"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/field_indigenous" />
+        <TextView
+            android:id="@+id/field_pwd"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/edittext_border"
+            android:backgroundTint="?attr/colorPrimaryContainer"
+            android:fontFamily="sans-serif-light"
+            android:text="course/degree"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/label_pwd" />
 
+        <TextView
+            android:id="@+id/label_single"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="12dp"
+            android:fontFamily="sans-serif-light"
+            android:text="Single Parent:"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/field_pwd" />
+        <TextView
+            android:id="@+id/field_single"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/edittext_border"
+            android:backgroundTint="?attr/colorPrimaryContainer"
+            android:fontFamily="sans-serif-light"
+            android:text="course/degree"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/label_single" />
         <Button
             android:id="@+id/button_create_new"
             android:layout_width="0dp"
@@ -608,7 +806,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/field_graduate_studies_course" />
+            app:layout_constraintTop_toBottomOf="@+id/field_single" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

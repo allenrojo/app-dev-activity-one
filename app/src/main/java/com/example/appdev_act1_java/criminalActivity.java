@@ -33,7 +33,6 @@ public class criminalActivity extends AppCompatActivity {
         details_four_c = findViewById(R.id.details_four_c);
 
         admin_offense_yes = findViewById(R.id.admin_offense_yes);
-
         admin_offense_yes.setOnCheckedChangeListener((buttonView, isChecked) -> {
             details.setEnabled(isChecked);
             admin_offense_no.setChecked(false);
@@ -54,7 +53,7 @@ public class criminalActivity extends AppCompatActivity {
         });
         criminal_offense_no = findViewById(R.id.criminal_offense_no);
         criminal_offense_no.setOnCheckedChangeListener((buttonView, isChecked) -> {
-            details_two.setEnabled(isChecked);
+            details_two.setEnabled(!isChecked);
             details_two.setText("");
             criminal_offense_yes.setChecked(false);
         });
@@ -66,7 +65,7 @@ public class criminalActivity extends AppCompatActivity {
         });
         convicted_no = findViewById(R.id.convicted_no);
         convicted_no.setOnCheckedChangeListener((buttonView, isChecked) -> {
-            details_three.setEnabled(isChecked);
+            details_three.setEnabled(!isChecked);
             details_three.setText("");
             convicted_yes.setChecked(false);
         });
@@ -78,7 +77,7 @@ public class criminalActivity extends AppCompatActivity {
         });
         four_a_no = findViewById(R.id.four_a_no);
         four_a_no.setOnCheckedChangeListener((buttonView, isChecked) -> {
-            details_four_a.setEnabled(isChecked);
+            details_four_a.setEnabled(!isChecked);
             details_four_a.setText("");
             four_a_yes.setChecked(false);
         });
@@ -90,7 +89,7 @@ public class criminalActivity extends AppCompatActivity {
         });
         four_b_no = findViewById(R.id.four_b_no);
         four_b_no.setOnCheckedChangeListener((buttonView, isChecked) -> {
-                details_four_b.setEnabled(isChecked);
+                details_four_b.setEnabled(!isChecked);
                 details_four_b.setText("");
                 four_b_yes.setChecked(false);
         });
@@ -102,7 +101,7 @@ public class criminalActivity extends AppCompatActivity {
         });
         four_c_no = findViewById(R.id.four_c_no);
         four_c_no.setOnCheckedChangeListener((buttonView, isChecked) -> {
-            details_four_c.setEnabled(isChecked);
+            details_four_c.setEnabled(!isChecked);
             details_four_c.setText("");
             four_c_yes.setChecked(false);
         });
@@ -138,6 +137,13 @@ public class criminalActivity extends AppCompatActivity {
         boolean questionFourBNo = four_b_no.isChecked();
         boolean questionFourCNo = four_c_no.isChecked();
 
+        String adminNo = admin_offense_no.getText().toString();
+        String criminalNo = criminal_offense_no.getText().toString();
+        String convictedNo = convicted_no.getText().toString();
+        String indigenousNo = four_a_no.getText().toString();
+        String pwdNo = four_b_no.getText().toString();
+        String singleNo = four_c_no.getText().toString();
+
         if (answerOne.isEmpty() && !questionOneNo){
             hasError = true;
         }
@@ -157,13 +163,25 @@ public class criminalActivity extends AppCompatActivity {
             hasError = true;
         }
 
-
         if (hasError) {
             Toast.makeText(this, "Please fill in all required fields.", Toast.LENGTH_SHORT).show();
             return;
         }
 
         Intent intent = new Intent(this, displayActivity.class);
+        intent.putExtra("key_answer_one", answerOne);
+        intent.putExtra("key_answer_two", answerTwo);
+        intent.putExtra("key_answer_three", answerThree);
+        intent.putExtra("key_answer_four_a", answerFourA);
+        intent.putExtra("key_answer_four_b", answerFourB);
+        intent.putExtra("key_answer_four_c", answerFourC);
+
+        intent.putExtra("key_question_one_no", adminNo);
+        intent.putExtra("key_question_two_no", criminalNo);
+        intent.putExtra("key_question_three_no", convictedNo);
+        intent.putExtra("key_question_four_a_no", indigenousNo);
+        intent.putExtra("key_question_four_b_no", pwdNo);
+        intent.putExtra("key_question_four_c_no", singleNo);
 
 
         Intent previousIntent = getIntent();

@@ -15,7 +15,8 @@ import androidx.core.view.WindowInsetsCompat;
 public class displayActivity extends AppCompatActivity {
     private TextView field_name, field_email, field_gender, field_phone, field_height, field_weight, field_status, field_pagibig, field_tin, field_philhealth, field_gsis,
             field_emergency_contact_name, field_emergency_contact_number, field_relationship,
-            field_elementary, field_secondary, field_vocational, field_vocational_course, field_college, field_college_course, field_graduate_studies, field_graduate_studies_course;
+            field_elementary, field_elementary_course, field_secondary, field_secondary_course, field_vocational, field_vocational_course, field_college, field_college_course, field_graduate_studies, field_graduate_studies_course,
+            field_admin, field_criminal, field_convicted, field_indigenous, field_pwd, field_single ;
 
     private Button button_create_new;
 
@@ -46,7 +47,9 @@ public class displayActivity extends AppCompatActivity {
         field_relationship = findViewById(R.id.field_relationship);
 
         field_elementary = findViewById(R.id.field_elementary);
+        field_elementary_course = findViewById(R.id.field_elementary_course);
         field_secondary = findViewById(R.id.field_secondary);
+        field_secondary_course = findViewById(R.id.field_secondary_course);
         field_vocational = findViewById(R.id.field_vocational);
         field_vocational_course = findViewById(R.id.field_vocational_course);
         field_college = findViewById(R.id.field_college);
@@ -54,19 +57,24 @@ public class displayActivity extends AppCompatActivity {
         field_graduate_studies = findViewById(R.id.field_graduate_studies);
         field_graduate_studies_course = findViewById(R.id.field_graduate_studies_course);
 
+        field_admin = findViewById(R.id.field_admin);
+        field_criminal = findViewById(R.id.field_criminal);
+        field_convicted = findViewById(R.id.field_convicted);
+        field_indigenous = findViewById(R.id.field_indigenous);
+        field_pwd = findViewById(R.id.field_pwd);
+        field_single = findViewById(R.id.field_single);
+
         Intent intent = getIntent();
         
         String firstName = intent.getStringExtra("key_first_name");
         String middleName = intent.getStringExtra("key_middle_name");
         String lastName = intent.getStringExtra("key_last_name");
         String email = intent.getStringExtra("key_email");
-
         String gender = intent.getStringExtra("key_gender");
 
         String phone = intent.getStringExtra("key_phone");
         String height = intent.getStringExtra("key_height");
         String weight = intent.getStringExtra("key_weight");
-
         String status = intent.getStringExtra("key_status");
 
         String pagibig = intent.getStringExtra("key_pagibig");
@@ -78,13 +86,29 @@ public class displayActivity extends AppCompatActivity {
         String relationship = intent.getStringExtra("key_relationship");
 
         String elementary = intent.getStringExtra("key_elementary");
+        String elementaryCourse = intent.getStringExtra("key_elementary_course");
         String secondary = intent.getStringExtra("key_secondary");
+        String secondaryCourse = intent.getStringExtra("key_secondary_course");
         String vocational = intent.getStringExtra("key_vocational");
         String vocationalCourse = intent.getStringExtra("key_vocational_course");
         String college = intent.getStringExtra("key_college");
         String collegeCourse = intent.getStringExtra("key_college_course");
         String graduateStudies = intent.getStringExtra("key_graduate_studies");
         String graduateStudiesCourse = intent.getStringExtra("key_graduate_studies_course");
+
+        String answerOne = intent.getStringExtra("key_answer_one");
+        String answerOneNo = intent.getStringExtra("key_question_one_no");
+        String answerTwo = intent.getStringExtra("key_answer_two");
+        String answerTwoNo = intent.getStringExtra("key_question_two_no");
+        String answerThree = intent.getStringExtra("key_answer_three");
+        String answerThreeNo = intent.getStringExtra("key_question_three_no");
+        String answerFourA = intent.getStringExtra("key_answer_four_a");
+        String answerFourANo = intent.getStringExtra("key_question_four_a_no");
+        String answerFourB = intent.getStringExtra("key_answer_four_b");
+        String answerFourBNo = intent.getStringExtra("key_question_four_b_no");
+        String answerFourC = intent.getStringExtra("key_answer_four_c");
+        String answerFourCNo = intent.getStringExtra("key_question_four_c_no");
+
 
         field_name.setText(firstName +" "+ middleName +" "+ lastName);
         field_email.setText(email);
@@ -102,13 +126,34 @@ public class displayActivity extends AppCompatActivity {
         field_relationship.setText(relationship);
 
         field_elementary.setText(elementary);
+        field_elementary_course.setText(elementaryCourse);
         field_secondary.setText(secondary);
+        field_secondary_course.setText(secondaryCourse);
         field_vocational.setText(vocational);
         field_vocational_course.setText(vocationalCourse);
         field_college.setText(college);
         field_college_course.setText(collegeCourse);
         field_graduate_studies.setText(graduateStudies);
         field_graduate_studies_course.setText(graduateStudiesCourse);
+
+        if (!answerOne.isBlank()) field_admin.setText(answerOne);
+            else field_admin.setText("None");
+
+        if (!answerTwo.isBlank()) field_criminal.setText(answerTwo);
+            else field_criminal.setText("None");
+
+        if (!answerThree.isBlank()) field_convicted.setText(answerThree);
+            else field_convicted.setText("None");
+
+        if (!answerFourA.isBlank()) field_indigenous.setText(answerFourA);
+            else field_indigenous.setText("None");
+
+        if (!answerFourB.isBlank()) field_pwd.setText(answerFourB);
+            else field_pwd.setText("None");
+
+        if (!answerFourC.isBlank()) field_single.setText(answerFourC);
+            else field_single.setText("None");
+
 
         button_create_new = findViewById(R.id.button_create_new);
         button_create_new.setOnClickListener(new View.OnClickListener() {

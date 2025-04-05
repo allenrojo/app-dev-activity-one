@@ -88,7 +88,9 @@ public class educationActivity extends AppCompatActivity {
 
     private void validateFields() {
         String elementary = input_elementary.getText().toString().trim();
+        String elementaryCourse = input_elementary_course.getText().toString().trim();
         String secondary = input_secondary.getText().toString().trim();
+        String secondaryCourse = input_secondary_course.getText().toString().trim();
         String vocational = input_vocational.getText().toString().trim();
         String vocationalCourse = input_vocational_course.getText().toString().trim();
         String college = input_college.getText().toString().trim();
@@ -147,7 +149,9 @@ public class educationActivity extends AppCompatActivity {
         Intent intent = new Intent(educationActivity.this, criminalActivity.class);
 
         intent.putExtra("key_elementary", elementary);
+        intent.putExtra("key_elementary_course", elementaryCourse);
         intent.putExtra("key_secondary", secondary);
+        intent.putExtra("key_secondary", secondaryCourse);
         intent.putExtra("key_vocational", vocational);
         intent.putExtra("key_vocational_course", vocationalCourse);
         intent.putExtra("key_college", college);
