@@ -97,17 +97,11 @@ public class displayActivity extends AppCompatActivity {
         String graduateStudiesCourse = intent.getStringExtra("key_graduate_studies_course");
 
         String answerOne = intent.getStringExtra("key_answer_one");
-        String answerOneNo = intent.getStringExtra("key_question_one_no");
         String answerTwo = intent.getStringExtra("key_answer_two");
-        String answerTwoNo = intent.getStringExtra("key_question_two_no");
         String answerThree = intent.getStringExtra("key_answer_three");
-        String answerThreeNo = intent.getStringExtra("key_question_three_no");
         String answerFourA = intent.getStringExtra("key_answer_four_a");
-        String answerFourANo = intent.getStringExtra("key_question_four_a_no");
         String answerFourB = intent.getStringExtra("key_answer_four_b");
-        String answerFourBNo = intent.getStringExtra("key_question_four_b_no");
         String answerFourC = intent.getStringExtra("key_answer_four_c");
-        String answerFourCNo = intent.getStringExtra("key_question_four_c_no");
 
 
         field_name.setText(firstName +" "+ middleName +" "+ lastName);
@@ -153,7 +147,6 @@ public class displayActivity extends AppCompatActivity {
 
         if (!answerFourC.isBlank()) field_single.setText(answerFourC);
             else field_single.setText("None");
-
 
         button_create_new = findViewById(R.id.button_create_new);
         button_create_new.setOnClickListener(new View.OnClickListener() {

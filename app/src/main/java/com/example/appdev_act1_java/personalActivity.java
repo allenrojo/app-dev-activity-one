@@ -25,7 +25,7 @@ public class personalActivity extends AppCompatActivity {
     private EditText input_first_name, input_middle_name, input_last_name, input_email, input_phone, input_height, input_weight,
             input_pagibig, input_tin, input_philhealth, input_gsis,
             input_full_name, input_emergency_contact_number, input_relationship;
-    private Button button_submit;
+
     private RadioGroup radio_group_gender, radio_group_civil_status;
     private RadioButton radio_male, radio_female, radio_lgbtq,
             radio_single, radio_married, radio_separated, radio_widowed, radio_others;
@@ -57,7 +57,6 @@ public class personalActivity extends AppCompatActivity {
         radio_widowed = findViewById(R.id.radio_widowed);
         radio_others = findViewById(R.id.radio_others);
 
-
         input_pagibig =findViewById(R.id.input_pagibig);
         input_philhealth = findViewById(R.id.input_philhealth);
         input_tin = findViewById(R.id.input_tin);
@@ -67,14 +66,12 @@ public class personalActivity extends AppCompatActivity {
         input_emergency_contact_number = findViewById(R.id.input_emergency_contact_number);
         input_relationship = findViewById(R.id.input_relationship);
 
-        button_submit = findViewById(R.id.button_submit);
+        Button button_submit = findViewById(R.id.button_submit);
         button_submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 validateFields();
             }
-
-
         });
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
@@ -162,10 +159,8 @@ public class personalActivity extends AppCompatActivity {
         if (hasError) {
             return;
         }
-
         // All fields are filled in and valid, do something here (e.g., submit the form)
         Toast.makeText(this, "Processing...", Toast.LENGTH_SHORT).show();
-
 
         Intent intent = new Intent(personalActivity.this, educationActivity.class);
 

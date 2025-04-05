@@ -15,7 +15,6 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 public class educationActivity extends AppCompatActivity {
-
     private EditText input_elementary,input_elementary_course, input_secondary, input_secondary_course, input_vocational, input_vocational_course, input_college, input_college_course, input_graduate_studies, input_graduate_studies_course;
     private Button button_submit;
     private CheckBox checkBox, checkBox1, checkBox2, checkBox3;
@@ -37,7 +36,6 @@ public class educationActivity extends AppCompatActivity {
         input_college_course = findViewById(R.id.input_college_course);
         input_graduate_studies = findViewById(R.id.input_graduate_studies);
         input_graduate_studies_course = findViewById(R.id.input_graduate_studies_course);
-
 
         checkBox = findViewById(R.id.checkBox);
         checkBox.setOnCheckedChangeListener((buttonView, isChecked) -> {

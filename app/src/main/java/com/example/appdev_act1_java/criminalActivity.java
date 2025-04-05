@@ -16,7 +16,6 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 public class criminalActivity extends AppCompatActivity {
-    private TextView label_question_one,label_question_two,label_question_three,label_question_four, label_question_four_a, label_question_four_b, label_question_four_c;
     private CheckBox admin_offense_yes, admin_offense_no, criminal_offense_yes, criminal_offense_no, convicted_yes, convicted_no, four_a_yes, four_a_no, four_b_yes, four_b_no, four_c_yes, four_c_no;
     private Button button_submit;
     private EditText details, details_two, details_three, details_four_a, details_four_b, details_four_c;
@@ -43,7 +42,6 @@ public class criminalActivity extends AppCompatActivity {
             details.setEnabled(!isChecked);
             details.setText("");
             admin_offense_yes.setChecked(false);
-
         });
 
         criminal_offense_yes = findViewById(R.id.criminal_offense_yes);
@@ -137,13 +135,6 @@ public class criminalActivity extends AppCompatActivity {
         boolean questionFourBNo = four_b_no.isChecked();
         boolean questionFourCNo = four_c_no.isChecked();
 
-        String adminNo = admin_offense_no.getText().toString();
-        String criminalNo = criminal_offense_no.getText().toString();
-        String convictedNo = convicted_no.getText().toString();
-        String indigenousNo = four_a_no.getText().toString();
-        String pwdNo = four_b_no.getText().toString();
-        String singleNo = four_c_no.getText().toString();
-
         if (answerOne.isEmpty() && !questionOneNo){
             hasError = true;
         }
@@ -176,14 +167,6 @@ public class criminalActivity extends AppCompatActivity {
         intent.putExtra("key_answer_four_b", answerFourB);
         intent.putExtra("key_answer_four_c", answerFourC);
 
-        intent.putExtra("key_question_one_no", adminNo);
-        intent.putExtra("key_question_two_no", criminalNo);
-        intent.putExtra("key_question_three_no", convictedNo);
-        intent.putExtra("key_question_four_a_no", indigenousNo);
-        intent.putExtra("key_question_four_b_no", pwdNo);
-        intent.putExtra("key_question_four_c_no", singleNo);
-
-
         Intent previousIntent = getIntent();
         intent.putExtra("key_first_name", previousIntent.getStringExtra("key_first_name"));
         intent.putExtra("key_middle_name", previousIntent.getStringExtra("key_middle_name"));
@@ -210,6 +193,7 @@ public class criminalActivity extends AppCompatActivity {
         intent.putExtra("key_college_course", previousIntent.getStringExtra("key_collegeCourse"));
         intent.putExtra("key_graduate_studies", previousIntent.getStringExtra("key_graduateStudies"));
         intent.putExtra("key_graduate_studies_course", previousIntent.getStringExtra("key_graduateStudiesCourse"));
+
         startActivity(intent);
 
     }
