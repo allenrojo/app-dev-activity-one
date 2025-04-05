@@ -153,9 +153,9 @@ public class personalActivity extends AppCompatActivity {
                 relationship.isEmpty() || gender.isEmpty() || status.isEmpty()) {
 
             Toast.makeText(this, "Please fill in all required fields.", Toast.LENGTH_SHORT).show();
-            hasError = false; //make this true after testing
+            hasError = true; //make this true after testing
         }
-
+        //hasError = false; //remove after testing
         if (hasError) {
             return;
         }

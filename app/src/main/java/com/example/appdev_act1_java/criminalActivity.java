@@ -154,6 +154,7 @@ public class criminalActivity extends AppCompatActivity {
             hasError = true;
         }
 
+        //hasError = false; //remove after testing
         if (hasError) {
             Toast.makeText(this, "Please fill in all required fields.", Toast.LENGTH_SHORT).show();
             return;
@@ -186,13 +187,15 @@ public class criminalActivity extends AppCompatActivity {
         intent.putExtra("key_status", previousIntent.getStringExtra("key_status"));
 
         intent.putExtra("key_elementary", previousIntent.getStringExtra("key_elementary"));
+        intent.putExtra("key_elementary_course", previousIntent.getStringExtra("key_elementary_course"));
         intent.putExtra("key_secondary", previousIntent.getStringExtra("key_secondary"));
+        intent.putExtra("key_secondary_course", previousIntent.getStringExtra("key_secondary_course"));
         intent.putExtra("key_vocational", previousIntent.getStringExtra("key_vocational"));
-        intent.putExtra("key_vocational_course", previousIntent.getStringExtra("key_vocationalCourse"));
+        intent.putExtra("key_vocational_course", previousIntent.getStringExtra("key_vocational_course"));
         intent.putExtra("key_college", previousIntent.getStringExtra("key_college"));
-        intent.putExtra("key_college_course", previousIntent.getStringExtra("key_collegeCourse"));
-        intent.putExtra("key_graduate_studies", previousIntent.getStringExtra("key_graduateStudies"));
-        intent.putExtra("key_graduate_studies_course", previousIntent.getStringExtra("key_graduateStudiesCourse"));
+        intent.putExtra("key_college_course", previousIntent.getStringExtra("key_college_course"));
+        intent.putExtra("key_graduate_studies", previousIntent.getStringExtra("key_graduate_studies"));
+        intent.putExtra("key_graduate_studies_course", previousIntent.getStringExtra("key_graduate_studies_course"));
 
         startActivity(intent);
 

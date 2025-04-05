@@ -17,7 +17,7 @@ import androidx.core.view.WindowInsetsCompat;
 public class educationActivity extends AppCompatActivity {
     private EditText input_elementary,input_elementary_course, input_secondary, input_secondary_course, input_vocational, input_vocational_course, input_college, input_college_course, input_graduate_studies, input_graduate_studies_course;
     private Button button_submit;
-    private CheckBox checkBox, checkBox1, checkBox2, checkBox3;
+    private CheckBox checkBox, checkBox2, checkBox3, checkBox4;
 
 
     @Override
@@ -43,29 +43,29 @@ public class educationActivity extends AppCompatActivity {
             input_elementary.setEnabled(isChecked);
             input_elementary_course.setEnabled(isChecked);
         });
-        checkBox1 = findViewById(R.id.checkBox2);
-        checkBox1.setOnCheckedChangeListener((buttonView, isChecked) -> {
+        checkBox2 = findViewById(R.id.checkBox2);
+        checkBox2.setOnCheckedChangeListener((buttonView, isChecked) -> {
             // Disable EditText if CheckBox is checked, enable otherwise
             input_secondary.setEnabled(isChecked);
             input_secondary_course.setEnabled(isChecked);
             checkBox.setChecked(true);
         });
-        checkBox2 = findViewById(R.id.checkBox3);
-        checkBox2.setOnCheckedChangeListener((buttonView, isChecked) -> {
+        checkBox3 = findViewById(R.id.checkBox3);
+        checkBox3.setOnCheckedChangeListener((buttonView, isChecked) -> {
             // Disable EditText if CheckBox is checked, enable otherwise
             input_college.setEnabled(isChecked);
             input_college_course.setEnabled(isChecked);
             checkBox.setChecked(true);
-            checkBox1.setChecked(true);
+            checkBox2.setChecked(true);
         });
-        checkBox3 = findViewById(R.id.checkBox4);
-        checkBox3.setOnCheckedChangeListener((buttonView, isChecked) -> {
+        checkBox4 = findViewById(R.id.checkBox4);
+        checkBox4.setOnCheckedChangeListener((buttonView, isChecked) -> {
             // Disable EditText if CheckBox is checked, enable otherwise
             input_graduate_studies.setEnabled(isChecked);
             input_graduate_studies_course.setEnabled(isChecked);
             checkBox.setChecked(true);
-            checkBox1.setChecked(true);
             checkBox2.setChecked(true);
+            checkBox3.setChecked(true);
 
         });
 
@@ -96,9 +96,14 @@ public class educationActivity extends AppCompatActivity {
         String graduateStudies = input_graduate_studies.getText().toString().trim();
         String graduateStudiesCourse = input_graduate_studies_course.getText().toString().trim();
 
+        checkBox = findViewById(R.id.checkBox);
+        checkBox2 = findViewById(R.id.checkBox2);
+        checkBox3 = findViewById(R.id.checkBox3);
+        checkBox4 = findViewById(R.id.checkBox4);
+
         boolean hasError = false;
 
-        if (!elementary.matches("^[a-zA-Z /-]+$")) {
+        /*if (!elementary.matches("^[a-zA-Z /-]+$")) {
             input_elementary.setError("Must contain only letters, spaces, and valid characters");
             hasError = true;
         }
@@ -129,18 +134,43 @@ public class educationActivity extends AppCompatActivity {
         if (!graduateStudiesCourse.matches("^[a-zA-Z /-]+$")) {
             input_graduate_studies_course.setError("Must contain only letters, spaces, and valid characters");
             hasError = true;
+        }*/
+
+        if (checkBox.isChecked() && elementary.isEmpty() && elementaryCourse.isEmpty()){
+            hasError = true;
+            if (!elementary.matches("^[a-zA-Z /-]+$")) {
+                input_elementary.setError("Must contain only letters, spaces, and valid characters");
+                input_elementary_course.setError("Must contain only letters, spaces, and valid characters");
+
+            }
         }
+        if (checkBox2.isChecked() && secondary.isEmpty() && secondaryCourse.isEmpty()){
+            hasError = true;
+            if (!elementary.matches("^[a-zA-Z /-]+$")) {
+                input_secondary.setError("Must contain only letters, spaces, and valid characters");
+                input_secondary_course.setError("Must contain only letters, spaces, and valid characters");
 
-        if (elementary.isEmpty() || secondary.isEmpty() || vocational.isEmpty() ||
-                vocationalCourse.isEmpty() || college.isEmpty() || collegeCourse.isEmpty() ||
-                graduateStudies.isEmpty() || graduateStudiesCourse.isEmpty()) {
-
-            // If any field is empty, show a Toast message
-            Toast.makeText(this, "Please fill in all required fields.", Toast.LENGTH_SHORT).show();
-            hasError = false; // make this true after testing
+            }
         }
+        if (checkBox3.isChecked() && college.isEmpty() && collegeCourse.isEmpty()){
+            hasError = true;
+            if (!elementary.matches("^[a-zA-Z /-]+$")) {
+                input_college.setError("Must contain only letters, spaces, and valid characters");
+                input_college_course.setError("Must contain only letters, spaces, and valid characters");
 
+            }
+        }
+        if (checkBox4.isChecked() && graduateStudies.isEmpty() && graduateStudiesCourse.isEmpty()){
+            hasError = true;
+            if (!elementary.matches("^[a-zA-Z /-]+$")) {
+                input_graduate_studies.setError("Must contain only letters, spaces, and valid characters");
+                input_graduate_studies_course.setError("Must contain only letters, spaces, and valid characters");
+
+            }
+        }
+        //hasError = false; //remove after testing
         if (hasError) {
+            Toast.makeText(this, "Please fill in all required fields.", Toast.LENGTH_SHORT).show();
             return;
         }
 
@@ -149,7 +179,7 @@ public class educationActivity extends AppCompatActivity {
         intent.putExtra("key_elementary", elementary);
         intent.putExtra("key_elementary_course", elementaryCourse);
         intent.putExtra("key_secondary", secondary);
-        intent.putExtra("key_secondary", secondaryCourse);
+        intent.putExtra("key_secondary_course", secondaryCourse);
         intent.putExtra("key_vocational", vocational);
         intent.putExtra("key_vocational_course", vocationalCourse);
         intent.putExtra("key_college", college);

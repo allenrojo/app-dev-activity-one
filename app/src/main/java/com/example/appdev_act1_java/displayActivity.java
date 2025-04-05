@@ -121,14 +121,39 @@ public class displayActivity extends AppCompatActivity {
 
         field_elementary.setText(elementary);
         field_elementary_course.setText(elementaryCourse);
+        if (elementary.isBlank()) {
+            field_elementary.setText("N/A");
+            field_elementary_course.setText("N/A");
+
+        }
         field_secondary.setText(secondary);
         field_secondary_course.setText(secondaryCourse);
+        if (secondary.isBlank()) {
+            field_secondary.setText("N/A");
+            field_secondary_course.setText("N/A");
+
+        }
         field_vocational.setText(vocational);
         field_vocational_course.setText(vocationalCourse);
+        if (vocational.isBlank()) {
+            field_vocational.setText("N/A");
+            field_vocational_course.setText("N/A");
+
+        }
         field_college.setText(college);
         field_college_course.setText(collegeCourse);
+        if (college.isBlank()) {
+            field_college.setText("N/A");
+            field_college_course.setText("N/A");
+
+        }
         field_graduate_studies.setText(graduateStudies);
         field_graduate_studies_course.setText(graduateStudiesCourse);
+        if (graduateStudies.isBlank()) {
+            field_graduate_studies.setText("N/A");
+            field_graduate_studies_course.setText("N/A");
+
+        }
 
         if (!answerOne.isBlank()) field_admin.setText(answerOne);
             else field_admin.setText("None");
