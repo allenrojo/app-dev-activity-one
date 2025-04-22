@@ -2,7 +2,7 @@ package com.example.appdev_act1_java;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
-import android.graphics.Color;
+
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.util.Patterns;
@@ -14,8 +14,6 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
-import android.widget.RadioGroup.OnCheckedChangeListener;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import java.io.ByteArrayOutputStream;
@@ -24,14 +22,9 @@ import java.util.regex.Pattern;
 import androidx.activity.EdgeToEdge;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 import android.widget.Spinner;
 import java.util.List;
 import java.util.ArrayList;
-
-
 public class personalActivity extends AppCompatActivity {
     private EditText input_first_name, input_middle_name, input_last_name, input_email, input_phone, input_height, input_weight,
             input_pagibig, input_tin, input_philhealth, input_gsis,
@@ -78,25 +71,22 @@ public class personalActivity extends AppCompatActivity {
         input_emergency_contact_number = findViewById(R.id.input_emergency_contact_number);
 
         Spinner spinner_relationship = findViewById(R.id.spinner_relationship);
-
         List<String> spinnerItems = new ArrayList<>();
-        spinnerItems.add("Single");
-        spinnerItems.add("Married");
-        spinnerItems.add("Widowed");
-        spinnerItems.add("Others");
-
+        spinnerItems.add("Select relationship: ");
+        spinnerItems.add("Father");
+        spinnerItems.add("Mother");
+        spinnerItems.add("Sister");
+        spinnerItems.add("Brother");
+        spinnerItems.add("Husband");
+        spinnerItems.add("Wife");
+        spinnerItems.add("Other");
         ArrayAdapter<String> adapter = new ArrayAdapter<>(
                 this,
                 android.R.layout.simple_spinner_dropdown_item,
                 spinnerItems
         );
-
-        // Specify the layout to use when the list of choices appears
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-
-        // Apply the adapter to the spinner
         spinner_relationship.setAdapter(adapter);
-
         spinner_relationship.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
@@ -104,7 +94,7 @@ public class personalActivity extends AppCompatActivity {
             }
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
-                selectedSpinnerItem = "";
+                selectedSpinnerItem = null;
             }
         });
         imageView = findViewById(R.id.imageView);
@@ -115,7 +105,6 @@ public class personalActivity extends AppCompatActivity {
                 openCamera();
             }
         });
-
         Button button_submit = findViewById(R.id.button_submit);
         button_submit.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -136,8 +125,6 @@ public class personalActivity extends AppCompatActivity {
             photo = (Bitmap)data.getExtras().get("data");
             ImageView image = findViewById(R.id.imageView);
             image.setImageBitmap(photo);
-        } else {
-            Toast.makeText(this, "Kalmado Lang", Toast.LENGTH_SHORT).show();
         }
     }
     private void validateFields() {
@@ -210,9 +197,12 @@ public class personalActivity extends AppCompatActivity {
             input_emergency_contact_number.setError("Emergency contact number must be 11 digits");
             hasError = true;
         }
+        if (selectedSpinnerItem.equals("Select relationship: ")) {
+            Toast.makeText(personalActivity.this, "Choose a relationship.", Toast.LENGTH_SHORT).show();
+        }
         if (firstName.isEmpty() || middleName.isEmpty() || lastName.isEmpty() ||
                 email.isEmpty() || phone.isEmpty() || height.isEmpty() ||
-                weight.isEmpty() || fullName.isEmpty() || emergencyContactNumber.isEmpty()
+                weight.isEmpty() || fullName.isEmpty() || emergencyContactNumber.isEmpty() || relationship.equals("Select relationship: ")
                  || gender.isEmpty() || status.isEmpty()) {
 
             Toast.makeText(this, "Please fill in all required fields.", Toast.LENGTH_SHORT).show();
@@ -238,6 +228,7 @@ public class personalActivity extends AppCompatActivity {
         Toast.makeText(this, "Processing...", Toast.LENGTH_SHORT).show();
 
         Intent intent = new Intent(this, educationActivity.class);
+
         intent.putExtra("photoBundle", bundle);
 
         intent.putExtra("key_first_name", firstName);
