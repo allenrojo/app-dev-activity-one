@@ -174,7 +174,11 @@ public class educationActivity extends AppCompatActivity {
             return;
         }
 
+        Bundle bundle = getIntent().getBundleExtra("photoBundle");
+
         Intent intent = new Intent(educationActivity.this, criminalActivity.class);
+
+        intent.putExtra("photoBundle", bundle);
 
         intent.putExtra("key_elementary", elementary);
         intent.putExtra("key_elementary_course", elementaryCourse);

@@ -1,9 +1,12 @@
 package com.example.appdev_act1_java;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
@@ -25,6 +28,12 @@ public class displayActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.display_activity);
+
+        Bundle bundle = getIntent().getBundleExtra("photoBundle");
+        byte[] photoByteArray = bundle.getByteArray("photo");
+        Bitmap photo = BitmapFactory.decodeByteArray(photoByteArray, 0, photoByteArray.length);
+        ImageView imageView = findViewById(R.id.imageView2);
+        imageView.setImageBitmap(photo);
 
         field_name = findViewById(R.id.field_name);
         field_email = findViewById(R.id.field_email);

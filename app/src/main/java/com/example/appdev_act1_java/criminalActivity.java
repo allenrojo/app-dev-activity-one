@@ -159,8 +159,12 @@ public class criminalActivity extends AppCompatActivity {
             Toast.makeText(this, "Please fill in all required fields.", Toast.LENGTH_SHORT).show();
             return;
         }
+        Bundle bundle = getIntent().getBundleExtra("photoBundle");
 
         Intent intent = new Intent(this, displayActivity.class);
+
+        intent.putExtra("photoBundle", bundle);
+
         intent.putExtra("key_answer_one", answerOne);
         intent.putExtra("key_answer_two", answerTwo);
         intent.putExtra("key_answer_three", answerThree);

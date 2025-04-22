@@ -26,6 +26,33 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="0dp"
+            android:layout_height="352dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/label_personal_background"
+            tools:srcCompat="@tools:sample/avatars" />
+
+        <Button
+            android:id="@+id/button_photo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:onClick="openCamera"
+            android:text="Take photo"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+
+
         <TextView
             android:id="@+id/label_name"
             android:layout_width="wrap_content"
@@ -35,7 +62,7 @@
             android:fontFamily="sans-serif-light"
             android:text="Name"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/label_personal_background" />
+            app:layout_constraintTop_toBottomOf="@+id/button_photo" />
 
         <EditText
             android:id="@+id/input_first_name"
@@ -501,8 +528,8 @@
             app:layout_constraintStart_toEndOf="@+id/label_emergency_contact_number"
             app:layout_constraintTop_toBottomOf="@+id/input_full_name" />
 
-        <EditText
-            android:id="@+id/input_relationship"
+        <Spinner
+            android:id="@+id/spinner_relationship"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="32dp"
@@ -510,7 +537,6 @@
             android:background="@drawable/edittext_border"
             android:ems="10"
             android:fontFamily="sans-serif-light"
-            android:inputType="text"
             android:hint=""
             android:textColor="#A6A6A6"
             android:textSize="14sp"
